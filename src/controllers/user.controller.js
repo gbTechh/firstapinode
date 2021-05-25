@@ -13,7 +13,7 @@ class UserController{
 
     async getAll(req, res){
         const user = await _userService.getAll();
-        return res.send(users);
+        return res.send(user);
     }
 
     async update(req, res){
