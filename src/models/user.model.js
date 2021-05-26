@@ -35,7 +35,7 @@ UserSchema.pre('save', async function(next){
     }
 
     const salt = genSaltSync(10);
-    const hashedPassword = hashSync(user, password, salt);
+    const hashedPassword = hashSync(user.password, salt);
     user.password = hashedPassword;
     next()
 })
